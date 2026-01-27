@@ -1,0 +1,82 @@
+.admin-dashboard {
+  padding: var(--spacing-xl) 0;
+  min-height: 60vh;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.admin-tabs button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--luxaro-light-gray);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+.admin-tabs button:hover {
+  color: var(--luxaro-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.admin-tabs button.active {
+  color: var(--luxaro-gold);
+  border-bottom-color: var(--luxaro-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+  background-color: var(--luxaro-dark-gray);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--luxaro-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+}
+
+.stat-card h3 {
+  color: var(--luxaro-medium-gray);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-value {
+  color: var(--luxaro-gold);
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.admin-section {
+  background-color: var(--luxaro-dark-gray);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+}
+
+.admin-section h2 {
+  margin-bottom: var(--spacing-lg);
+}
