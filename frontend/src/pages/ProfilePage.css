@@ -1,0 +1,169 @@
+.profile-page {
+  padding: var(--spacing-xl) 0;
+  min-height: 60vh;
+}
+
+.profile-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  background-color: var(--luxaro-dark-gray);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-xl);
+}
+
+.profile-card h2 {
+  color: var(--luxaro-gold);
+  margin-bottom: var(--spacing-lg);
+  font-size: 24px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.info-row {
+  display: flex;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--luxaro-gold);
+  min-width: 150px;
+}
+
+.info-value {
+  color: var(--luxaro-white);
+}
+
+
+
+
+
+
+
+
+
+
+/* 🆕 Alert Banners */
+.alert {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alert-warning {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+}
+
+.alert-critical {
+  background-color: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+}
+
+.alert-expired {
+  background-color: #FECACA;
+  color: #7F1D1D;
+  border: 2px solid #DC2626;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 🆕 Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #D4AF37;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #D4AF37;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #888;
+  font-size: 12px;
+}
+
+/* 🆕 Role Badge */
+.role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.role-badge.admin {
+  background-color: #D4AF37;
+  color: #000;
+}
+
+.role-badge.user {
+  background-color: #10B981;
+  color: #FFF;
+}
+
+.role-badge.vendor {
+  background-color: #3B82F6;
+  color: #FFF;
+}
+
+/* 🆕 Session Card Styling */
+.session-card {
+  background-color: #f9f9f9;
+padding: 15px;
+border-radius: 8px;
+border: 1px solid #ddd;
+margin-bottom: 10px;
+}
+.session-card.current {
+background-color: #f0fdf4;
+border: 2px solid #10B981;
+}
