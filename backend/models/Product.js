@@ -71,7 +71,7 @@ const productSchema = new mongoose.Schema({
           return v.every(url => 
             typeof url === 'string' && 
             url.length <= 500 &&
-            /^https?:\/\/.+/.test(url)
+            (/^https?:\/\/.+/.test(url) || /^\/uploads\/.+/.test(url))
           );
         },
         message: 'Invalid image URL format'
@@ -187,3 +187,5 @@ productSchema.pre('findOne', function() {
 });
 
 module.exports = mongoose.model('Product', productSchema);
+
+

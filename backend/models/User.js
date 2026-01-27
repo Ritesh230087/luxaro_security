@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'admin', 'vendor'],
+    enum: ['user', 'admin'],
     default: 'user'
   },
   // 🔧 FIX: Store encrypted phone, decrypt on query
@@ -150,11 +150,11 @@ phone: {
 });
 
 // Pre-save hook: Hash password
+
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
 
   try {
-    // Save old password to history
     if (!this.isNew) {
       const oldUser = await this.constructor.findById(this._id).select('+password');
       if (oldUser && oldUser.password) {
@@ -162,7 +162,6 @@ userSchema.pre('save', async function(next) {
           password: oldUser.password,
           changedAt: Date.now()
         });
-
         // Keep only last 10
         if (this.passwordHistory.length > 10) {
           this.passwordHistory.shift();
@@ -207,7 +206,7 @@ userSchema.methods.incLoginAttempts = async function() {
   const newAttempts = this.loginAttempts + 1;
   
   if (newAttempts >= 5 && newAttempts < 10) {
-    updates.$set = { lockUntil: Date.now() + 15 * 60 * 1000 };
+    updates.$set = { lockUntil: Date.now() + 1 * 60 * 1000 };
   } else if (newAttempts >= 10 && newAttempts < 15) {
     updates.$set = { lockUntil: Date.now() + 60 * 60 * 1000 };
   } else if (newAttempts >= 15) {
